@@ -12,8 +12,8 @@
 |----------|-------|
 | Document ID | TMP-006 |
 | Title | Architecture Review Process |
-| Version | 1.0 |
-| Status | Draft |
+| Version | 2.0 |
+| Status | Adopted |
 | Classification | Public |
 | Owner | TechAndMe |
 | Author | TechAndMe |
@@ -32,40 +32,39 @@
 
 # Table of Contents
 
-1. Preamble
-2. Purpose
-3. Why Architecture Reviews Matter
-4. Review Principles
-5. Architecture Review Lifecycle
-6. Related Documents
-7. Revision History
-8. Closing Reflection
-
----
-
-# Preamble
-
-Software architecture determines the long-term success of a system.
-
-Implementation can be improved through refactoring, but poor architectural decisions often become expensive to reverse.
-
-For this reason, TechAndMe treats architecture review as a formal engineering activity rather than an informal discussion.
-
-Architecture reviews exist to improve systems before implementation, reduce technical debt, validate assumptions, and ensure alignment with engineering principles.
+1. Purpose
+2. Why Architecture Reviews Matter
+3. Review Principles
+4. Architecture Review Lifecycle
+5. Architecture Review Workflow
+6. Architecture Review Checklist
+7. Architecture Review Roles
+8. Architecture Review Outputs
+9. Architecture Decision Records
+10. Continuous Improvement
+11. Related Documents
+12. Revision History
+13. Closing Reflection
 
 ---
 
 # 1. Purpose
 
-The purpose of this document is to establish a repeatable process for reviewing software architecture before significant implementation begins.
+## 1.1 Purpose
 
-A structured review enables engineers to:
+This document establishes the official Architecture Review Process for every TechAndMe project.
 
-- validate system design;
-- identify architectural risks;
-- improve maintainability;
-- align implementation with business objectives;
-- encourage collaborative engineering decisions.
+It defines a structured and repeatable method for evaluating software architecture before significant implementation begins.
+
+Architecture reviews improve engineering quality by validating designs, identifying risks, documenting decisions, and ensuring alignment with TechAndMe engineering principles.
+
+### AR-001
+
+Every significant software project shall undergo an architecture review before implementation.
+
+### AR-002
+
+Architecture reviews shall focus on long-term maintainability, clarity, and engineering quality.
 
 ---
 
@@ -73,68 +72,79 @@ A structured review enables engineers to:
 
 Architecture influences every stage of software development.
 
-Well-reviewed architecture leads to:
+Well-reviewed architecture produces:
 
-- simpler implementation;
-- clearer system boundaries;
-- improved maintainability;
-- reduced technical debt;
-- better scalability;
-- more effective testing.
+- Simpler implementation
+- Clearer system boundaries
+- Improved maintainability
+- Reduced technical debt
+- Better scalability
+- Improved testability
+- Better engineering communication
 
-Investing time in architecture review often prevents significantly larger implementation costs later.
+### AR-003
+
+Architecture review is a preventative engineering activity rather than a corrective one.
 
 ---
 
 # 3. Review Principles
 
-Every architecture review should follow these principles.
-
-## Principle 1 — Understand Before Changing
+## 3.1 Understand Before Changing
 
 Reviewers should understand the existing design before proposing improvements.
 
-Recommendations should be based on understanding rather than assumption.
+### AR-004
+
+Recommendations shall be based on evidence rather than assumptions.
 
 ---
 
-## Principle 2 — Challenge Ideas, Not People
+## 3.2 Challenge Ideas, Not People
 
 Architecture reviews evaluate designs—not individuals.
 
-Constructive discussion improves engineering quality.
-
 Respectful disagreement is encouraged.
 
----
+### AR-005
 
-## Principle 3 — Business Before Technology
-
-Architectural decisions should first satisfy business needs.
-
-Technology exists to support the solution—not define it.
+Architecture reviews shall remain collaborative and constructive.
 
 ---
 
-## Principle 4 — Simplicity Wins
+## 3.3 Business Before Technology
 
-When multiple solutions satisfy the requirements, prefer the simplest maintainable design.
+Technology exists to support business objectives.
 
-Complexity should always require clear justification.
+### AR-006
+
+Business requirements shall drive architectural decisions.
 
 ---
 
-## Principle 5 — Record Decisions
+## 3.4 Simplicity Wins
 
-Important architectural decisions should be documented.
+When multiple solutions satisfy the requirements, choose the simplest maintainable solution.
 
-Future engineers should understand not only what was decided, but why it was decided.
+### AR-007
+
+Complexity shall require clear engineering justification.
+
+---
+
+## 3.5 Record Decisions
+
+Important architectural decisions should always be documented.
+
+### AR-008
+
+Significant architectural decisions shall be preserved using Architecture Decision Records (ADRs).
 
 ---
 
 # 4. Architecture Review Lifecycle
 
-Every architecture review progresses through the following stages.
+Every architecture review progresses through the following lifecycle.
 
 1. Problem Definition
 2. Requirements Review
@@ -144,34 +154,38 @@ Every architecture review progresses through the following stages.
 6. Approval
 7. Implementation Planning
 
-Architecture should be considered approved before significant implementation begins.
+### AR-009
 
-# 5. Architecture Review Workflow
-
-Architecture reviews should follow a structured workflow to ensure consistency, completeness, and meaningful outcomes.
-
-The recommended workflow consists of seven stages.
+Architecture should be approved before significant implementation begins.
 
 ---
 
-## Stage 1 — Understand the Business Problem
+# 5. Architecture Review Workflow
 
-Every review begins by understanding the problem the software is intended to solve.
+Architecture reviews follow seven structured stages.
+
+---
+
+## 5.1 Stage 1 — Understand the Business Problem
+
+Every review begins by understanding the business problem.
 
 Questions include:
 
 - What problem exists?
 - Who are the users?
-- What are the business objectives?
-- What constraints must be respected?
+- What are the objectives?
+- What constraints exist?
 
-No architectural discussion should begin until the problem is clearly understood.
+### AR-010
+
+No architectural review shall begin until the business problem has been clearly understood.
 
 ---
 
-## Stage 2 — Understand the Current Design
+## 5.2 Stage 2 — Understand the Current Design
 
-Review the existing architecture before proposing improvements.
+Review the existing architecture before proposing changes.
 
 Evaluate:
 
@@ -181,45 +195,48 @@ Evaluate:
 - Layer interactions
 - Existing assumptions
 
-The objective is to understand before recommending change.
+### AR-011
+
+Reviewers shall understand the current architecture before recommending changes.
 
 ---
 
-## Stage 3 — Evaluate Against Engineering Principles
+## 5.3 Stage 3 — Evaluate Against Engineering Principles
 
-Assess the architecture against the Engineering Principles defined in TMP-003.
+Assess the architecture using **TMP-003 Engineering Principles**.
 
 Typical questions include:
 
 - Is the design simple?
-- Are responsibilities clearly separated?
-- Is the architecture maintainable?
-- Does it support future change?
+- Is responsibility clearly separated?
+- Is the system maintainable?
+- Can the architecture evolve?
 - Is documentation sufficient?
 
-This ensures architectural consistency across projects.
+### AR-012
+
+Architecture reviews shall evaluate compliance with TechAndMe Engineering Principles.
 
 ---
 
-## Stage 4 — Identify Risks and Opportunities
+## 5.4 Stage 4 — Identify Risks and Opportunities
 
-Record areas that may require attention.
-
-Examples include:
+Identify significant findings including:
 
 - Tight coupling
-- Unclear responsibilities
 - Duplicate logic
 - Missing abstractions
 - Performance concerns
 - Scalability limitations
 - Documentation gaps
 
-Not every observation requires immediate action, but all significant findings should be documented.
+### AR-013
+
+All significant architectural risks shall be documented.
 
 ---
 
-## Stage 5 — Recommend Improvements
+## 5.5 Stage 5 — Recommend Improvements
 
 Recommendations should be:
 
@@ -228,21 +245,21 @@ Recommendations should be:
 - Justified
 - Prioritised
 
-Each recommendation should explain:
+Each recommendation should include:
 
-- the current issue;
-- the proposed improvement;
-- the expected benefit.
+- Current issue
+- Proposed improvement
+- Expected benefit
 
-Recommendations should improve the architecture without introducing unnecessary complexity.
+### AR-014
 
----
+Recommendations shall improve architecture without introducing unnecessary complexity.
 
-## Stage 6 — Record Decisions
+## 5.6 Stage 6 — Record Decisions
 
 Important architectural decisions should be documented before implementation begins.
 
-Decision records should include:
+Each decision should include:
 
 - Decision
 - Context
@@ -250,22 +267,26 @@ Decision records should include:
 - Rationale
 - Expected impact
 
-Documenting decisions preserves engineering knowledge and reduces future uncertainty.
+### AR-015
+
+Significant architectural decisions shall be recorded using Architecture Decision Records (ADRs).
 
 ---
 
-## Stage 7 — Approve for Implementation
+## 5.7 Stage 7 — Approve for Implementation
 
 Implementation should begin only after the architecture has been reviewed and accepted.
 
-Approval indicates that:
+Approval confirms that:
 
-- objectives are understood;
-- architecture is considered appropriate;
-- known risks have been evaluated;
-- implementation may proceed.
+- Objectives are understood.
+- Architecture is appropriate.
+- Risks have been evaluated.
+- Implementation may proceed.
 
-Approval does not imply that the architecture is perfect—only that it is fit for its intended purpose.
+### AR-016
+
+Architecture approval shall precede major implementation activities.
 
 ---
 
@@ -273,7 +294,7 @@ Approval does not imply that the architecture is perfect—only that it is fit f
 
 The following checklist provides a consistent review framework.
 
-## Business Alignment
+## 6.1 Business Alignment
 
 - Problem clearly defined
 - Objectives understood
@@ -282,7 +303,7 @@ The following checklist provides a consistent review framework.
 
 ---
 
-## Architecture
+## 6.2 Architecture
 
 - Clear system boundaries
 - Well-defined responsibilities
@@ -292,7 +313,7 @@ The following checklist provides a consistent review framework.
 
 ---
 
-## Quality Attributes
+## 6.3 Quality Attributes
 
 - Maintainability
 - Scalability
@@ -303,7 +324,7 @@ The following checklist provides a consistent review framework.
 
 ---
 
-## Documentation
+## 6.4 Documentation
 
 - Architecture documented
 - Major decisions recorded
@@ -312,14 +333,16 @@ The following checklist provides a consistent review framework.
 
 ---
 
-## Readiness
+## 6.5 Readiness
 
 - Risks understood
 - Outstanding questions identified
 - Recommendations documented
 - Implementation approved
 
-A completed checklist provides confidence that the architecture has received appropriate technical consideration.
+### AR-017
+
+Every formal architecture review should complete the Architecture Review Checklist before approval.
 
 ---
 
@@ -327,91 +350,95 @@ A completed checklist provides confidence that the architecture has received app
 
 Architecture review is a collaborative engineering activity.
 
-Every participant has defined responsibilities.
+## 7.1 Chief Architect
 
-## Chief Architect
+Responsibilities include:
 
-Responsible for:
+- Leading architecture reviews
+- Ensuring alignment with engineering principles
+- Challenging assumptions constructively
+- Approving architectural direction
+- Recording significant decisions
 
-- Leading the architecture review.
-- Ensuring alignment with engineering principles.
-- Challenging assumptions constructively.
-- Approving architectural direction.
-- Recording significant architectural decisions.
+### AR-018
 
-The Chief Architect safeguards the long-term integrity of the system.
-
----
-
-## Project Engineer
-
-Responsible for:
-
-- Presenting the proposed architecture.
-- Explaining design decisions.
-- Providing supporting documentation.
-- Responding to technical questions.
-- Incorporating agreed improvements.
-
-The Project Engineer owns the implementation while remaining open to constructive review.
+The Chief Architect is responsible for safeguarding architectural integrity.
 
 ---
 
-## Review Participants
+## 7.2 Project Engineer
 
-Where appropriate, additional reviewers may participate.
+Responsibilities include:
 
-Their responsibilities include:
+- Presenting the proposed architecture
+- Explaining design decisions
+- Providing supporting documentation
+- Responding to technical questions
+- Implementing agreed improvements
 
-- Asking questions.
-- Identifying risks.
-- Suggesting improvements.
-- Sharing relevant experience.
-- Verifying engineering quality.
+### AR-019
 
-Effective reviews encourage collaboration rather than criticism.
+The Project Engineer owns implementation while collaborating throughout the review process.
+
+---
+
+## 7.3 Review Participants
+
+Additional reviewers may:
+
+- Ask questions
+- Identify risks
+- Suggest improvements
+- Share experience
+- Verify engineering quality
+
+### AR-020
+
+Architecture reviews should encourage collaborative engineering discussion.
 
 ---
 
 # 8. Architecture Review Outputs
 
-Every review should produce tangible outputs.
+Every architecture review should produce tangible engineering artifacts.
 
 Typical outputs include:
 
-- Approved architecture.
-- Review notes.
-- Action items.
-- Risk register.
-- Architecture Decision Records (ADRs).
-- Updated documentation.
+- Approved architecture
+- Review notes
+- Action items
+- Risk register
+- Architecture Decision Records (ADRs)
+- Updated documentation
 
-The objective is to ensure that valuable engineering knowledge is retained beyond the review meeting.
+### AR-021
+
+Architecture reviews shall produce documented outputs that remain available throughout the project lifecycle.
 
 ---
 
 # 9. Architecture Decision Records
 
-Significant architectural decisions should be documented using a consistent format.
-
-Each Architecture Decision Record should contain:
+Significant architectural decisions should follow a consistent format.
 
 | Section | Description |
 |----------|-------------|
 | Decision | What was decided? |
 | Context | Why was the decision required? |
-| Alternatives | What options were considered? |
-| Rationale | Why was this option selected? |
-| Consequences | Expected benefits and trade-offs. |
-| Status | Proposed, Accepted, Superseded, or Archived. |
+| Alternatives | Options considered |
+| Rationale | Why this option was selected |
+| Consequences | Expected benefits and trade-offs |
+| Status | Proposed, Accepted, Superseded, or Archived |
 
-Architecture decisions should remain discoverable throughout the life of the project.
+### AR-022
+
+Architecture Decision Records shall remain discoverable throughout the project lifecycle.
 
 ---
 
 # 10. Continuous Improvement
 
-Architecture review is not a one-time event.
+Architecture review is an ongoing engineering activity.
 
 As projects evolve:
 
@@ -420,9 +447,11 @@ As projects evolve:
 - Risks emerge.
 - Opportunities appear.
 
-Periodic reviews ensure that architecture continues to support project objectives without accumulating unnecessary technical debt.
+Periodic reviews ensure architecture continues to support project objectives without accumulating unnecessary technical debt.
 
-Continuous improvement is an engineering responsibility rather than a corrective action.
+### AR-023
+
+Architecture should be reviewed whenever significant architectural change is proposed.
 
 ---
 
@@ -436,8 +465,11 @@ This document should be read alongside:
 - TMP-004 Documentation Standards
 - TMP-005 Repository Standards
 - TMP-007 Checkpoint Framework
+- TMP-008 Engineering Reference System
 
-Together, these documents define the complete engineering governance model for TechAndMe projects.
+### AR-024
+
+Architecture reviews shall use the Engineering Reference System defined in **TMP-008** for cross-document references.
 
 ---
 
@@ -446,6 +478,7 @@ Together, these documents define the complete engineering governance model for T
 | Version | Date | Description | Author |
 |----------|------|-------------|--------|
 | 1.0 | July 2026 | Initial adopted edition | TechAndMe |
+| 2.0 | July 2026 | Adopted Engineering Reference System, section numbering, rule identifiers, and cross-reference standards. | TechAndMe |
 
 ---
 
@@ -453,15 +486,15 @@ Together, these documents define the complete engineering governance model for T
 
 Strong architecture rarely happens by accident.
 
-It is the result of thoughtful analysis, respectful discussion, disciplined review, and careful decision-making.
+It is the result of thoughtful analysis, disciplined review, respectful discussion, and well-documented engineering decisions.
 
-Architecture reviews are not intended to delay implementation—they exist to improve it.
+Architecture reviews are not intended to delay implementation.
 
-Every review strengthens not only the software being built, but also the engineers participating in the process.
+They exist to improve it.
 
-Within TechAndMe, architecture review is considered an investment in long-term engineering excellence.
+Every review strengthens both the software being built and the engineers participating in the process.
 
-Every well-reviewed system becomes easier to understand, easier to maintain, and better prepared for the future.
+Within TechAndMe, architecture review is an investment in long-term engineering excellence.
 
 ---
 
