@@ -12,8 +12,8 @@
 |----------|-------|
 | Document ID | TMP-007 |
 | Title | Checkpoint Framework |
-| Version | 1.0 |
-| Status | Draft |
+| Version | 2.0 |
+| Status | Adopted |
 | Classification | Public |
 | Owner | TechAndMe |
 | Author | TechAndMe |
@@ -32,104 +32,116 @@
 
 # Table of Contents
 
-1. Preamble
-2. Purpose
-3. Why Checkpoints Matter
-4. Checkpoint Principles
-5. Checkpoint Lifecycle
-6. Related Documents
-7. Revision History
-8. Closing Reflection
-
----
-
-# Preamble
-
-Software projects are rarely built in a single uninterrupted effort.
-
-Development occurs over days, weeks, and months, often involving changing priorities, new discoveries, and evolving requirements.
-
-Without structured checkpoints, valuable engineering knowledge can be lost between development sessions.
-
-The TechAndMe Checkpoint Framework provides a disciplined approach for pausing, reviewing, documenting, and resuming work while preserving engineering continuity.
+1. Purpose
+2. Why Checkpoints Matter
+3. Checkpoint Principles
+4. Checkpoint Lifecycle
+5. Checkpoint Workflow
+6. Checkpoint Documentation
+7. Checkpoint Naming Standards
+8. Freeze Criteria
+9. Checkpoint Review Checklist
+10. Project Handover Standard
+11. Continuous Engineering
+12. Related Documents
+13. Revision History
+14. Closing Reflection
 
 ---
 
 # 1. Purpose
 
-The purpose of this document is to establish a standard process for creating engineering checkpoints throughout the software development lifecycle.
+## 1.1 Purpose
 
-A checkpoint provides a reliable reference point that enables development to continue with confidence, regardless of how much time has passed since the previous session.
+This document establishes the official Checkpoint Framework for all TechAndMe projects.
 
-The framework ensures that engineering knowledge remains with the project rather than depending solely on memory.
+It defines a repeatable process for pausing, documenting, reviewing, freezing, and resuming software development while preserving engineering knowledge and project continuity.
+
+### CP-001
+
+Every significant development milestone shall be captured as a documented checkpoint.
+
+### CP-002
+
+Checkpoint documentation shall preserve sufficient information for development to resume without unnecessary reconstruction.
 
 ---
 
 # 2. Why Checkpoints Matter
 
-Checkpoints serve as milestones within the engineering journey.
+Software development is iterative.
 
-They allow teams and individual engineers to:
+Projects evolve over weeks or months, during which requirements, priorities, and designs may change.
 
-- pause work without losing context;
-- record architectural decisions;
-- document completed work;
-- identify outstanding tasks;
-- preserve implementation status;
-- simplify project handovers;
-- maintain engineering momentum.
+Checkpoints preserve engineering continuity by recording:
 
-A well-prepared checkpoint transforms a pause in development into a structured continuation point.
+- Current project status
+- Completed work
+- Engineering decisions
+- Outstanding tasks
+- Resume points
+
+### CP-003
+
+Engineering knowledge shall remain with the project rather than individual memory.
 
 ---
 
 # 3. Checkpoint Principles
 
-Every checkpoint should follow these principles.
+## 3.1 Preserve Context
 
-## Principle 1 — Preserve Context
+A checkpoint should capture enough information for future work to begin immediately.
 
-A checkpoint should capture sufficient information for development to resume without unnecessary investigation.
+### CP-004
 
-Future work should begin with understanding rather than reconstruction.
-
----
-
-## Principle 2 — Record Decisions
-
-Important technical and architectural decisions made during the development session should be documented.
-
-Understanding *why* decisions were made is often more valuable than knowing *what* changed.
+Every checkpoint shall preserve sufficient development context.
 
 ---
 
-## Principle 3 — Reflect the Current State
+## 3.2 Record Decisions
 
-A checkpoint should accurately represent the project's current condition.
+Engineering decisions should be documented while they remain current.
 
-Completed work, known limitations, pending tasks, and identified risks should all be recorded.
+### CP-005
 
----
-
-## Principle 4 — Enable Continuity
-
-A checkpoint exists to make the next development session productive from the very beginning.
-
-The objective is to minimise time spent rediscovering previous work.
+Significant technical and architectural decisions shall be recorded within the checkpoint.
 
 ---
 
-## Principle 5 — Celebrate Progress
+## 3.3 Reflect the Current State
+
+A checkpoint should accurately represent the project's condition.
+
+### CP-006
+
+Checkpoint documentation shall reflect the actual implementation state.
+
+---
+
+## 3.4 Enable Continuity
+
+Development should resume from documentation rather than memory.
+
+### CP-007
+
+Each checkpoint shall define a clear resume point.
+
+---
+
+## 3.5 Celebrate Progress
 
 Every checkpoint represents measurable engineering progress.
 
-Recognising completed work encourages disciplined development and reinforces continuous improvement.
+### CP-008
+
+Completed work should be recognised and documented before freezing a checkpoint.
 
 ---
 
 # 4. Checkpoint Lifecycle
 
-Every checkpoint progresses through a simple lifecycle.
+Every checkpoint progresses through the following lifecycle.
 
 1. Development
 2. Review
@@ -137,40 +149,40 @@ Every checkpoint progresses through a simple lifecycle.
 4. Freeze
 5. Resume
 
-Each stage contributes to preserving engineering continuity while supporting long-term project quality.
+### CP-009
 
-A checkpoint is considered complete only after the current state has been reviewed, documented, and approved for future continuation.
-
-# 5. Checkpoint Workflow
-
-Every checkpoint should follow a consistent workflow to ensure that development can pause and resume with minimal loss of context.
-
-The recommended workflow consists of six stages.
+A checkpoint shall not be considered complete until documentation has been reviewed and approved.
 
 ---
 
-## Stage 1 — Review Current Progress
+# 5. Checkpoint Workflow
 
-Before creating a checkpoint, review the work completed during the current development session.
+Every checkpoint follows six structured stages.
+
+---
+
+## 5.1 Stage 1 — Review Current Progress
+
+Review the work completed during the current development session.
 
 Record:
 
 - Objectives completed
 - Features implemented
 - Documents created
-- Architecture decisions made
+- Architecture decisions
 - Tests completed
 - Issues discovered
 
-The checkpoint should accurately represent the current state of the project.
+### CP-010
+
+Checkpoint creation shall begin with an accurate review of current progress.
 
 ---
 
-## Stage 2 — Record Engineering Decisions
+## 5.2 Stage 2 — Record Engineering Decisions
 
-Significant decisions made during development should be documented.
-
-Examples include:
+Document significant decisions including:
 
 - Architecture changes
 - Business rule updates
@@ -179,15 +191,15 @@ Examples include:
 - Naming decisions
 - Repository changes
 
-Engineering knowledge should never depend solely on memory.
+### CP-011
+
+Engineering decisions shall be documented before freezing a checkpoint.
 
 ---
 
-## Stage 3 — Identify Outstanding Work
+## 5.3 Stage 3 — Identify Outstanding Work
 
-Clearly identify what remains to be completed.
-
-Typical items include:
+Clearly identify:
 
 - Pending implementation
 - Known defects
@@ -196,59 +208,63 @@ Typical items include:
 - Testing activities
 - Refactoring opportunities
 
-Outstanding work should be sufficiently detailed to guide the next development session.
+### CP-012
+
+Outstanding work shall be sufficiently detailed to guide the next development session.
 
 ---
 
-## Stage 4 — Create the Handover Summary
+## 5.4 Stage 4 — Create the Handover Summary
 
-Every checkpoint should conclude with a concise handover summary.
+Every checkpoint concludes with a structured handover.
 
-A handover should answer the following questions:
+The handover should answer:
 
 - What was accomplished?
 - What decisions were made?
 - What remains outstanding?
 - Where should work resume?
-- Are there any known risks or assumptions?
+- Are there known risks?
 
-A well-written handover allows development to continue confidently after any interruption.
+### CP-013
 
----
-
-## Stage 5 — Freeze the Checkpoint
-
-Once the checkpoint has been reviewed and documented, it should be frozen.
-
-Freezing a checkpoint means that:
-
-- Documentation reflects the current state.
-- Outstanding work has been identified.
-- Engineering decisions have been recorded.
-- The project is ready to pause.
-
-A frozen checkpoint becomes a reliable historical reference.
+Every checkpoint shall include a formal handover summary.
 
 ---
 
-## Stage 6 — Resume Development
+## 5.5 Stage 5 — Freeze the Checkpoint
 
-The next development session should begin by reviewing the most recent checkpoint.
+A checkpoint may be frozen only after:
+
+- Documentation is current.
+- Outstanding work is identified.
+- Engineering decisions are recorded.
+- Repository status is stable.
+
+### CP-014
+
+Frozen checkpoints become permanent engineering reference points.
+
+---
+
+## 5.6 Stage 6 — Resume Development
+
+Every new development session begins by reviewing the latest checkpoint.
 
 The engineer should understand:
 
-- Project status
+- Current project status
 - Outstanding work
 - Previous decisions
 - Planned direction
 
-Development should continue from the checkpoint rather than relying on recollection.
+### CP-015
 
----
+Development shall resume from the latest approved checkpoint rather than relying on recollection.
 
 # 6. Checkpoint Documentation
 
-Every checkpoint should produce a documented record.
+Every checkpoint should produce a documented engineering record.
 
 Typical checkpoint contents include:
 
@@ -263,7 +279,9 @@ Typical checkpoint contents include:
 - Recommended next actions
 - Handover summary
 
-Consistent documentation ensures that every checkpoint becomes a valuable engineering record.
+### CP-016
+
+Every checkpoint shall produce a complete and reusable engineering record.
 
 ---
 
@@ -273,7 +291,7 @@ Checkpoint identifiers should remain simple, sequential, and permanent.
 
 Recommended format:
 
-```
+```text
 CP-001
 CP-002
 CP-003
@@ -283,21 +301,28 @@ Where appropriate, descriptive suffixes may be added.
 
 Examples:
 
-```
+```text
 CP-008B
 CP-008C
 CP-009A
+CP-010B
 ```
 
-The identifier should remain stable even if the checkpoint title changes.
+### CP-017
+
+Checkpoint identifiers shall remain stable throughout the life of the project.
+
+### CP-018
+
+Checkpoint titles may evolve without changing the checkpoint identifier.
 
 ---
 
 # 8. Freeze Criteria
 
-A checkpoint should not be frozen until the following conditions have been satisfied.
+A checkpoint shall not be frozen until the following conditions have been satisfied.
 
-## Documentation
+## 8.1 Documentation
 
 - Documentation updated
 - Decisions recorded
@@ -305,7 +330,7 @@ A checkpoint should not be frozen until the following conditions have been satis
 
 ---
 
-## Engineering
+## 8.2 Engineering
 
 - Current implementation stable
 - Known issues documented
@@ -313,104 +338,114 @@ A checkpoint should not be frozen until the following conditions have been satis
 
 ---
 
-## Repository
+## 8.3 Repository
 
 - Relevant files committed
 - Repository organised
 - Commit history meaningful
+- Remote repository updated where applicable
 
 ---
 
-## Continuity
+## 8.4 Continuity
 
 - Handover completed
 - Resume point identified
 - Next objectives documented
 
-Only after these conditions have been met should a checkpoint be considered complete.
+### CP-019
+
+All freeze criteria shall be satisfied before a checkpoint is declared frozen.
 
 ---
 
 # 9. Checkpoint Review Checklist
 
-Before adopting a checkpoint, the following checklist should be completed.
+Before adopting a checkpoint, verify:
 
-## Project Status
+## 9.1 Project Status
 
-- Objectives for the current session completed or documented.
-- Project status accurately reflects implementation.
-- Scope remains aligned with project objectives.
-
----
-
-## Documentation
-
-- Documentation updated.
-- Engineering decisions recorded.
-- Architecture changes documented.
-- Business rules updated where required.
+- Objectives completed or documented
+- Status accurately recorded
+- Scope remains aligned
 
 ---
 
-## Implementation
+## 9.2 Documentation
 
-- Source code committed.
-- Major features tested.
-- Known issues documented.
-- Temporary workarounds identified.
-
----
-
-## Repository
-
-- Repository structure remains organised.
-- Meaningful commit messages used.
-- Changes pushed to the remote repository.
-- Repository reflects the latest project state.
+- Documentation updated
+- Engineering decisions recorded
+- Architecture changes documented
+- Business rules updated where required
 
 ---
 
-## Continuity
+## 9.3 Implementation
 
-- Handover summary completed.
-- Outstanding tasks identified.
-- Next checkpoint objectives defined.
-- Resume point clearly documented.
+- Source code committed
+- Major features tested
+- Known issues documented
+- Temporary workarounds identified
 
-A checkpoint should not be considered complete until this checklist has been reviewed.
+---
+
+## 9.4 Repository
+
+- Repository organised
+- Meaningful commit messages used
+- Changes pushed to the remote repository
+- Repository reflects the latest project state
+
+---
+
+## 9.5 Continuity
+
+- Handover completed
+- Outstanding tasks identified
+- Next objectives defined
+- Resume point documented
+
+### CP-020
+
+The checkpoint review checklist should be completed before checkpoint adoption.
 
 ---
 
 # 10. Project Handover Standard
 
-Every checkpoint should conclude with a structured handover.
-
-The handover should provide sufficient information for another engineer—or the same engineer at a later date—to resume work efficiently.
+Every checkpoint concludes with a structured handover.
 
 A standard handover should include:
 
-- Current project status.
-- Objectives completed.
-- Architecture updates.
-- Files created or modified.
-- Outstanding implementation tasks.
-- Known issues.
-- Recommended next actions.
-- Suggested starting point for the next session.
+- Current project status
+- Objectives completed
+- Architecture updates
+- Files created or modified
+- Outstanding implementation tasks
+- Known issues
+- Recommended next actions
+- Resume point
 
-The handover serves as the bridge between consecutive development sessions.
+### CP-021
+
+Project handovers shall provide sufficient information for another engineer—or the future project maintainer—to resume work efficiently.
 
 ---
 
 # 11. Continuous Engineering
 
-Software engineering is a continuous process rather than a sequence of isolated coding sessions.
+Software engineering is a continuous process rather than isolated coding sessions.
 
-The Checkpoint Framework supports continuous engineering by encouraging regular reflection, documentation, and structured progress.
+The Checkpoint Framework supports continuous engineering through:
 
-Each completed checkpoint should leave the project in a better state than it was before the session began.
+- Regular documentation
+- Structured reflection
+- Engineering continuity
+- Progressive improvement
 
-Progress is measured not only by features implemented, but also by improvements in quality, clarity, maintainability, and engineering knowledge.
+### CP-022
+
+Every completed checkpoint should leave the project in a better engineering state than before the development session began.
 
 ---
 
@@ -424,8 +459,11 @@ This document should be read alongside:
 - TMP-004 Documentation Standards
 - TMP-005 Repository Standards
 - TMP-006 Architecture Review Process
+- TMP-008 Engineering Reference System
 
-Together, these documents form the Foundation Series of the TechAndMe Playbook.
+### CP-023
+
+Checkpoint documentation shall follow the Engineering Reference System defined in **TMP-008**.
 
 ---
 
@@ -434,6 +472,7 @@ Together, these documents form the Foundation Series of the TechAndMe Playbook.
 | Version | Date | Description | Author |
 |----------|------|-------------|--------|
 | 1.0 | July 2026 | Initial adopted edition | TechAndMe |
+| 2.0 | July 2026 | Adopted Engineering Reference System, section numbering, rule identifiers, and cross-reference standards. | TechAndMe |
 
 ---
 
@@ -441,23 +480,21 @@ Together, these documents form the Foundation Series of the TechAndMe Playbook.
 
 Every engineering journey is built one checkpoint at a time.
 
-A checkpoint is more than a pause in development—it is a deliberate act of preserving knowledge, celebrating progress, and preparing for the future.
+A checkpoint is more than a pause in development.
+
+It is a deliberate act of preserving knowledge, recording progress, and preparing for future work.
 
 The discipline of stopping well is as important as the discipline of starting well.
 
-Within TechAndMe, checkpoints represent confidence that the project can continue tomorrow with the same clarity and purpose that existed today.
+Within TechAndMe, checkpoints provide confidence that development can continue tomorrow with the same clarity and purpose that existed today.
 
-Great software is not built through continuous motion alone.
-
-It is built through thoughtful pauses, careful reflection, disciplined documentation, and intentional continuation.
-
-That is the purpose of the TechAndMe Checkpoint Framework.
+Great software is built not only through continuous motion, but through thoughtful pauses, disciplined documentation, and intentional continuation.
 
 ---
 
 ## Foundation Series Complete
 
-With the adoption of TMP-007, the first edition of the TechAndMe Playbook Foundation Series is complete.
+With the adoption of **TMP-007**, the first edition of the **TechAndMe Playbook Foundation Series** is complete.
 
 The Foundation Series consists of:
 
@@ -469,9 +506,9 @@ The Foundation Series consists of:
 - TMP-006 — Architecture Review Process
 - TMP-007 — Checkpoint Framework
 
-These seven documents establish the philosophy, governance, engineering standards, repository practices, documentation discipline, architecture review methodology, and checkpoint framework that guide every TechAndMe project.
+These seven documents establish the governance, engineering principles, documentation standards, repository standards, architecture review methodology, and checkpoint framework that guide every TechAndMe project.
 
-They are intended to evolve over time while preserving the principles upon which the TechAndMe engineering culture is built.
+They form the permanent engineering foundation upon which future Playbook series will be built.
 
 ---
 
