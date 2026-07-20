@@ -12,7 +12,7 @@
 |----------|-------|
 | Document ID | TMP-003 |
 | Title | Engineering Principles |
-| Version | 1.0 |
+| Version | 2.0 |
 | Status | Adopted |
 | Classification | Public |
 | Owner | TechAndMe |
@@ -32,165 +32,150 @@
 
 # Table of Contents
 
-1. Preamble
-2. Purpose
-3. The Engineering Principles
-4. Applying the Principles
-5. Related Documents
-6. Revision History
-7. Closing Reflection
-
----
-
-# Preamble
-
-Engineering principles are the foundation of consistent decision-making.
-
-Technologies change. Programming languages evolve. Frameworks rise and fall.
-
-Principles endure.
-
-The principles in this document define how TechAndMe approaches software engineering. They provide a common way of thinking that guides architecture, implementation, documentation, testing, maintenance, and continuous improvement.
-
-Whenever uncertainty exists, these principles should guide the decision.
+1. Purpose
+2. Engineering Principles
+3. Applying the Principles
+4. Related Documents
+5. Revision History
+6. Closing Reflection
 
 ---
 
 # 1. Purpose
 
-The purpose of this document is to establish the fundamental engineering principles that govern every TechAndMe project.
+## 1.1 Purpose
+
+This document establishes the fundamental engineering principles that govern every TechAndMe project.
 
 These principles provide consistency across repositories, reduce subjective decision-making, and encourage long-term thinking over short-term convenience.
 
+### EP-001
+
+All TechAndMe engineering activities shall be guided by these engineering principles.
+
+### EP-002
+
+Engineering decisions should prioritise long-term value over short-term convenience.
+
 ---
 
-# 2. The Engineering Principles
+# 2. Engineering Principles
 
-## Principle 1 — Purpose Before Implementation
-
-### Statement
+## 2.1 Principle 1 — Purpose Before Implementation
 
 Always understand **why** something is being built before deciding **how** to build it.
 
-### Why it Matters
+Engineering begins with solving the correct problem. A well-designed solution to the wrong problem remains the wrong solution.
 
-Engineering begins with solving the correct problem. A well-designed solution to the wrong problem is still the wrong solution.
+### EP-003
 
-### In Practice
+Business objectives shall be understood before implementation begins.
+
+Implementation guidance:
 
 - Define the objective before writing code.
 - Clarify business requirements.
-- Understand the users and stakeholders.
+- Understand users and stakeholders.
 - Challenge assumptions before implementation.
 
 ---
 
-## Principle 2 — Architecture Before Code
-
-### Statement
+## 2.2 Principle 2 — Architecture Before Code
 
 Design the structure before implementing the solution.
 
-### Why it Matters
+Architecture determines maintainability, scalability, and clarity.
 
-Architecture determines maintainability, scalability, and clarity. Code should follow architecture—not replace it.
+### EP-004
 
-### In Practice
+Architecture shall be established before implementation.
 
-- Design system boundaries first.
-- Separate responsibilities clearly.
+Implementation guidance:
+
+- Design system boundaries.
+- Separate responsibilities.
 - Document architectural decisions.
-- Avoid building features without understanding their place in the overall system.
+- Review architecture before coding.
 
 ---
 
-## Principle 3 — Simplicity Before Complexity
+## 2.3 Principle 3 — Simplicity Before Complexity
 
-### Statement
+Choose the simplest solution that satisfies the requirements.
 
-Choose the simplest solution that fully satisfies the requirements.
+### EP-005
 
-### Why it Matters
+Engineering solutions shall minimise unnecessary complexity.
 
-Complex systems are harder to understand, maintain, and improve. Simplicity reduces risk and improves long-term sustainability.
-
-### In Practice
+Implementation guidance:
 
 - Prefer clear designs.
 - Avoid unnecessary abstraction.
 - Eliminate duplication.
-- Build only what is currently needed.
+- Build only what is currently required.
 
 ---
 
-## Principle 4 — Documentation Is Engineering
+## 2.4 Principle 4 — Documentation Is Engineering
 
-### Statement
+Documentation is a core engineering activity.
 
-Documentation is a core engineering activity, not an afterthought.
+### EP-006
 
-### Why it Matters
+Documentation shall be treated as a first-class engineering artifact.
 
-Well-documented systems preserve knowledge, improve collaboration, and reduce maintenance costs.
-
-### In Practice
+Implementation guidance:
 
 - Document architecture.
-- Explain significant decisions.
-- Maintain accurate documentation.
-- Treat documentation with the same care as source code.
+- Record significant decisions.
+- Keep documentation current.
+- Maintain documentation alongside implementation.
 
 ---
 
-## Principle 5 — Build for Change
-
-### Statement
+## 2.5 Principle 5 — Build for Change
 
 Software should be designed to evolve.
 
-### Why it Matters
+### EP-007
 
-Requirements, technologies, and organisations change. Flexible systems adapt more effectively than rigid ones.
+Systems shall be designed for maintainability and future evolution.
 
-### In Practice
+Implementation guidance:
 
-- Use modular designs.
+- Use modular design.
 - Isolate responsibilities.
 - Minimise coupling.
-- Expect future enhancement.
+- Anticipate future enhancement.
 
 ---
 
-## Principle 6 — Quality Is Continuous
+## 2.6 Principle 6 — Quality Is Continuous
 
-### Statement
+Quality is built throughout the engineering lifecycle.
 
-Quality is built into every stage of engineering.
+### EP-008
 
-### Why it Matters
+Quality shall be considered during every engineering activity.
 
-Quality cannot be added at the end of a project. It results from disciplined practices throughout development.
-
-### In Practice
+Implementation guidance:
 
 - Review work regularly.
 - Test appropriately.
-- Refactor when necessary.
+- Refactor where beneficial.
 - Improve continuously.
 
 ---
 
-## Principle 7 — Consistency Builds Confidence
-
-### Statement
+## 2.7 Principle 7 — Consistency Builds Confidence
 
 Consistency improves readability, maintainability, and trust.
 
-### Why it Matters
+### EP-009
 
-Predictable structures reduce cognitive load and make systems easier to understand.
+Engineering standards shall be applied consistently across projects.
 
-### In Practice
+Implementation guidance:
 
 - Follow established standards.
 - Maintain consistent naming.
@@ -199,79 +184,88 @@ Predictable structures reduce cognitive load and make systems easier to understa
 
 ---
 
-## Principle 8 — Preserve Knowledge
+## 2.8 Principle 8 — Preserve Knowledge
 
-### Statement
+Every project should leave behind reusable engineering knowledge.
 
-Every project should leave behind reusable knowledge.
+### EP-010
 
-### Why it Matters
+Engineering knowledge shall be documented and preserved.
 
-Engineering maturity grows through accumulated learning rather than repeated rediscovery.
-
-### In Practice
+Implementation guidance:
 
 - Record important decisions.
 - Capture lessons learned.
-- Create reusable templates.
+- Develop reusable templates.
 - Share engineering knowledge.
 
 ---
 
-## Principle 9 — Continuous Improvement
-
-### Statement
+## 2.9 Principle 9 — Continuous Improvement
 
 Every iteration should improve the system, the process, or the engineer.
 
-### Why it Matters
+### EP-011
 
-Sustained progress comes from small, consistent improvements rather than occasional major changes.
+Engineering practices shall continuously evolve through practical experience.
 
-### In Practice
+Implementation guidance:
 
 - Conduct reviews.
 - Learn from experience.
-- Refine standards.
+- Improve standards.
 - Encourage constructive feedback.
 
 ---
 
-## Principle 10 — Professional Integrity
+## 2.10 Principle 10 — Professional Integrity
 
-### Statement
+Engineering decisions should prioritise honesty, responsibility, and long-term value.
 
-Engineering decisions should always prioritise honesty, responsibility, and long-term value.
+### EP-012
 
-### Why it Matters
+Engineering decisions shall be evidence-based, transparent, and professionally responsible.
 
-Trust is built through transparent communication, ethical decision-making, and professional conduct.
-
-### In Practice
+Implementation guidance:
 
 - Communicate risks openly.
-- Admit uncertainty when it exists.
+- Acknowledge uncertainty.
 - Make evidence-based decisions.
-- Prioritise long-term sustainability over short-term convenience.
+- Prioritise long-term sustainability.
 
 ---
 
 # 3. Applying the Principles
 
-These principles are intended to guide engineering decisions at every stage of the software lifecycle.
+These principles guide engineering decisions throughout the software lifecycle.
 
-When multiple solutions are possible, engineers should evaluate each option against these principles rather than relying solely on personal preference.
+When multiple solutions are available, each option should be evaluated against these principles rather than personal preference.
 
-No single principle exists in isolation. Together they provide a balanced framework for delivering maintainable, well-architected, and valuable software.
+No principle exists in isolation.
+
+Together they establish a balanced framework for delivering maintainable, well-architected, and valuable software.
+
+### EP-013
+
+Engineering decisions should be evaluated collectively against these principles.
 
 ---
 
 # 4. Related Documents
 
+This document should be read alongside:
+
 - TMP-001 Engineering Charter
 - TMP-002 Vision Strategy and Impact
 - TMP-004 Documentation Standards
 - TMP-005 Repository Standards
+- TMP-006 Architecture Review Process
+- TMP-007 Checkpoint Framework
+- TMP-008 Engineering Reference System
+
+### EP-014
+
+Engineering principles shall be referenced in accordance with **TMP-008**.
 
 ---
 
@@ -280,16 +274,19 @@ No single principle exists in isolation. Together they provide a balanced framew
 | Version | Date | Description | Author |
 |----------|------|-------------|--------|
 | 1.0 | July 2026 | Initial adopted edition | TechAndMe |
+| 2.0 | July 2026 | Adopted Engineering Reference System, section numbering, rule identifiers, and cross-reference standards. | TechAndMe |
 
 ---
 
 # 6. Closing Reflection
 
-Engineering principles are not rules to memorise—they are habits to practise.
+Engineering principles are not rules to memorise.
+
+They are habits to practise.
 
 They provide stability when technology changes, confidence when decisions are difficult, and consistency across every project.
 
-The strength of TechAndMe will not be measured solely by the software it produces, but by the engineering discipline that shapes every solution.
+The strength of TechAndMe will be measured not only by the software it produces, but by the engineering discipline behind every solution.
 
 ---
 
