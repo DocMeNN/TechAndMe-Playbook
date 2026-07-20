@@ -12,8 +12,8 @@
 |----------|-------|
 | Document ID | TMP-004 |
 | Title | Documentation Standards |
-| Version | 1.0 |
-| Status | Draft |
+| Version | 2.0 |
+| Status | Adopted |
 | Classification | Public |
 | Owner | TechAndMe |
 | Author | TechAndMe |
@@ -32,138 +32,148 @@
 
 # Table of Contents
 
-1. Preamble
-2. Purpose
-3. Why Documentation Matters
-4. Documentation Principles
-5. Documentation Lifecycle
-6. Related Documents
-7. Revision History
-8. Closing Reflection
-
----
-
-# Preamble
-
-Documentation is an engineering asset.
-
-It captures knowledge, communicates intent, preserves decisions, and enables software to evolve long after the original implementation has been completed.
-
-Within TechAndMe, documentation is considered a core engineering activity rather than an optional project deliverable.
-
-Every significant engineering decision should be understandable without relying solely on source code.
-
-This standard establishes the principles and expectations for creating, maintaining, and reviewing documentation across all TechAndMe repositories.
+1. Purpose
+2. Scope
+3. Documentation Principles
+4. Documentation Lifecycle
+5. Documentation Categories
+6. Documentation Structure
+7. Writing Standards
+8. Markdown Standards
+9. File Naming Standards
+10. Engineering Reference System
+11. Document Version Control
+12. Document Review and Approval
+13. Related Documents
+14. Revision History
+15. Closing Reflection
 
 ---
 
 # 1. Purpose
 
-The purpose of this document is to define a consistent documentation standard for every TechAndMe project.
+## 1.1 Purpose
 
-It ensures that documentation remains:
+This document defines the official documentation standards for all TechAndMe engineering projects.
 
-- Clear
-- Accurate
-- Consistent
-- Maintainable
-- Discoverable
-- Useful throughout the life of the project
+### DS-001
 
-A shared documentation standard improves communication, accelerates onboarding, reduces ambiguity, and preserves engineering knowledge.
+All TechAndMe engineering documentation shall comply with this standard.
+
+### DS-002
+
+Documentation shall be treated as a first-class engineering artifact throughout the software lifecycle.
 
 ---
 
-# 2. Why Documentation Matters
+# 2. Scope
 
-Documentation exists to answer questions before they become problems.
+## 2.1 Scope
 
-Good documentation explains:
+This standard applies to:
 
-- Why a system exists.
-- What problem it solves.
-- How it is designed.
-- How it should be used.
-- How it should evolve.
-- Why important decisions were made.
+- Playbook documents
+- Architecture documents
+- Technical specifications
+- Repository documentation
+- Business documentation
+- Checkpoints
+- Engineering Decision Records
+- Architecture Decision Records
 
-Without documentation, engineering knowledge becomes dependent on individuals.
+### DS-003
 
-With documentation, knowledge becomes part of the system itself.
+All engineering repositories shall adopt these documentation standards.
 
 ---
 
 # 3. Documentation Principles
 
-Every TechAndMe document should follow these principles.
+## 3.1 Clarity
 
-## Principle 1 — Clarity
+### DS-004
 
-Write for understanding rather than impressing the reader.
+Documentation shall be written for understanding rather than technical display.
 
-Prefer simple language over unnecessary technical complexity.
-
-A document should be understandable by its intended audience without requiring additional explanation.
+Prefer simple language over unnecessary complexity.
 
 ---
 
-## Principle 2 — Accuracy
+## 3.2 Accuracy
 
-Documentation must reflect the current state of the system.
+### DS-005
 
-Outdated documentation creates confusion and reduces trust.
+Documentation shall accurately reflect the current state of the project.
 
-Whenever implementation changes significantly, the relevant documentation should be reviewed and updated.
+### DS-006
 
----
-
-## Principle 3 — Consistency
-
-Documentation should follow common structures, terminology, formatting, and naming conventions.
-
-Readers should immediately recognise the organisation of every TechAndMe document.
+Documentation shall be reviewed whenever significant implementation changes occur.
 
 ---
 
-## Principle 4 — Maintainability
+## 3.3 Consistency
 
-Documentation should be organised so that updates can be made efficiently.
+### DS-007
 
-Large topics should be divided into focused documents rather than maintaining one excessively large file.
+Documentation shall use consistent terminology, formatting, and structure.
+
+### DS-008
+
+Common concepts shall be described consistently across all documents.
 
 ---
 
-## Principle 5 — Purpose
+## 3.4 Maintainability
 
-Every document should exist for a clearly defined reason.
+### DS-009
 
-If a document no longer provides value, it should be revised, merged, archived, or removed.
+Documentation shall be organised into focused, maintainable documents.
+
+### DS-010
+
+Large subjects should be divided into multiple documents rather than one excessively large document.
+
+---
+
+## 3.5 Purpose
+
+### DS-011
+
+Every document shall exist for a clearly defined engineering purpose.
+
+### DS-012
+
+Documents that no longer provide value should be revised, merged, archived, or removed.
 
 ---
 
 # 4. Documentation Lifecycle
 
-Every document progresses through a defined lifecycle.
+## 4.1 Lifecycle States
+
+Every engineering document progresses through a defined lifecycle.
 
 | Status | Meaning |
 |---------|---------|
-| Draft | Initial working document under development. |
-| Review | Under formal technical review. |
-| Adopted | Approved as the current standard. |
-| Revised | Updated following adoption. |
-| Archived | Retained for historical reference but no longer active. |
+| Draft | Initial working document |
+| Review | Under technical review |
+| Adopted | Official engineering standard |
+| Revised | Updated after adoption |
+| Archived | Historical reference only |
 
-Each document should clearly indicate its current lifecycle status within the Document Information section.
+### DS-013
+
+Every document shall declare its lifecycle status within the Document Information section.
+
+---
 
 # 5. Documentation Categories
 
-Documentation within TechAndMe is organised into logical categories to improve discoverability, maintenance, and long-term scalability.
-
 ## 5.1 Governance Documents
 
-These documents define how engineering is conducted.
+Governance documents define how engineering is conducted.
 
-Examples include:
+Examples:
 
 - Engineering Charter
 - Engineering Principles
@@ -171,8 +181,11 @@ Examples include:
 - Repository Standards
 - Architecture Review Process
 - Checkpoint Framework
+- Engineering Reference System
 
-These documents form the TechAndMe Playbook.
+### DS-014
+
+Governance documents collectively form the TechAndMe Playbook.
 
 ---
 
@@ -184,30 +197,33 @@ Typical documents include:
 
 - Vision
 - Requirements
-- Roadmap
+- Roadmaps
 - Business Rules
 - User Stories
 - Process Flows
 
-Business documentation should explain **what** the system must achieve and **why** it exists.
+### DS-015
+
+Business documentation shall explain what the system must achieve and why it exists.
 
 ---
 
 ## 5.3 Architecture Documents
 
-Architecture documentation describes the overall design of the system.
+Architecture documentation describes the organisation of the system.
 
 Typical documents include:
 
+- Business Architecture
 - System Architecture
-- Domain Model
-- Application Architecture
-- Infrastructure Architecture
+- Domain Architecture
+- Data Flow Architecture
 - AI Architecture
-- Presentation Architecture
-- Reporting Architecture
+- Implementation Architecture
 
-Architecture documents explain **how** the system is organised.
+### DS-016
+
+Architecture documentation shall explain how the system is organised.
 
 ---
 
@@ -224,15 +240,17 @@ Examples include:
 - Recognition Engine
 - API Specification
 
-Specifications define implementation rules while remaining independent of programming language.
+### DS-017
+
+Technical specifications shall define implementation behaviour while remaining independent of programming language.
 
 ---
 
 ## 5.5 Repository Documentation
 
-Each repository should include documentation that assists developers and users.
+Repository documentation assists developers and users.
 
-Typical repository documentation includes:
+Typical documentation includes:
 
 - README
 - CHANGELOG
@@ -242,15 +260,15 @@ Typical repository documentation includes:
 - Deployment Guide
 - Release Notes
 
-Repository documentation should enable a new contributor to understand the project without reading the source code.
+### DS-018
+
+Every repository shall contain sufficient documentation for a new contributor to understand the project without reading the source code.
 
 ---
 
 # 6. Documentation Structure
 
-Documentation should follow a predictable structure.
-
-Every major document should contain, where applicable:
+Every major engineering document should contain, where applicable:
 
 - Document Information
 - Purpose
@@ -260,111 +278,113 @@ Every major document should contain, where applicable:
 - Revision History
 - Closing Reflection
 
-Using a consistent structure improves readability and allows engineers to locate information quickly.
+### DS-019
+
+Major engineering documents shall follow a consistent structure.
+
+### DS-020
+
+Sections shall remain focused on a single primary topic.
 
 ---
 
 # 7. Writing Standards
 
-The quality of documentation depends on the quality of writing.
+## 7.1 Clear Language
 
-All TechAndMe documentation should follow these writing standards.
+### DS-021
 
-## Use Clear Language
-
-Write for understanding rather than technical display.
+Documentation shall prioritise clarity over technical display.
 
 Prefer:
 
-> "The system creates a Daily Session."
+> The system creates a Daily Session.
 
 Instead of:
 
-> "The system instantiates an event-driven temporal aggregation object."
+> The system instantiates an event-driven temporal aggregation object.
 
 ---
 
-## Use Active Voice
+## 7.2 Active Voice
+
+### DS-022
+
+Documentation should use active voice whenever practical.
 
 Prefer:
 
-> "The parser validates the session."
+> The parser validates the session.
 
 Instead of:
 
-> "The session is validated by the parser."
-
-Active voice improves clarity and reduces ambiguity.
+> The session is validated by the parser.
 
 ---
 
-## Be Precise
+## 7.3 Precision
 
-Avoid vague statements.
+### DS-023
 
-Instead of:
+Documentation shall avoid ambiguous language.
 
-> "Usually..."
-
-Specify the actual rule whenever possible.
-
-For example:
-
-> "A new Daily Session begins after a Scripture Reading message occurring at least 18 hours after the previous Scripture Reading."
+Rules should be expressed precisely whenever possible.
 
 ---
 
-## Define Important Terms
+## 7.4 Terminology
 
-Technical terms should be defined once and then used consistently throughout the project.
+### DS-024
 
-Avoid using multiple names for the same concept.
-
-Consistency improves communication and reduces misunderstanding.
+Technical terms shall be defined once and used consistently throughout the project.
 
 ---
 
-## Keep Sections Focused
+## 7.5 Focused Sections
+
+### DS-025
 
 Each section should discuss one primary topic.
 
-Large topics should be divided into smaller sections rather than creating excessively long paragraphs.
-
-This improves readability and future maintenance.
+Large topics should be divided into logical subsections.
 
 ---
 
 # 8. Markdown Standards
 
-Markdown is the standard documentation format for all TechAndMe repositories.
+Markdown is the official documentation format for TechAndMe repositories.
 
 Documentation should use:
 
-- Clear heading hierarchy
-- Tables for structured information
-- Bullet lists for related items
-- Numbered lists for ordered procedures
-- Code blocks for commands and examples
-- Horizontal separators between major sections where appropriate
+- Heading hierarchy
+- Tables
+- Bullet lists
+- Numbered lists
+- Code blocks
+- Horizontal separators
 
-Avoid excessive formatting that distracts from the content.
+### DS-026
 
-Consistency is more valuable than visual complexity.
+Engineering documentation shall be written in Markdown unless another format is explicitly required.
 
----
+### DS-027
+
+Markdown formatting shall remain consistent throughout each repository.
 
 # 9. File Naming Standards
 
-Consistent file names improve navigation, searchability, and long-term maintenance.
+Consistent file names improve navigation, searchability, maintainability, and traceability.
 
-## General Rules
+## 9.1 General Rules
 
-Documentation file names should:
+### DS-028
+
+Documentation file names shall:
 
 - Be descriptive.
 - Remain concise.
-- Use title case where appropriate.
-- Avoid special characters that may affect compatibility.
+- Use Title Case where appropriate.
+- Avoid unsupported special characters.
 - Maintain consistent naming throughout the repository.
 
 Examples:
@@ -372,87 +392,131 @@ Examples:
 - TMP-001 Engineering Charter.md
 - TMP-002 Vision Strategy and Impact.md
 - TMP-003 Engineering Principles.md
-- session-detection.md
-- participation-model.md
 
 ---
 
-## Playbook Documents
+## 9.2 Playbook Documents
 
-All TechAndMe Playbook documents shall use the following convention:
+### DS-029
 
-```
+All TechAndMe Playbook documents shall use the following naming convention:
+
+```text
 TMP-XXX Document Title.md
 ```
 
 Examples:
 
-```
+```text
 TMP-004 Documentation Standards.md
 TMP-005 Repository Standards.md
 TMP-006 Architecture Review Process.md
 TMP-007 Checkpoint Framework.md
+TMP-008 Engineering Reference System.md
 ```
 
-The document identifier provides a permanent reference that remains valid even if the document title evolves.
+The document identifier provides a permanent reference independent of future title changes.
 
 ---
 
-## Architecture Documents
+## 9.3 Architecture Documents
 
-Architecture documentation should describe the architectural layer it represents.
+### DS-030
+
+Architecture documents shall use the official Playbook document numbering system.
 
 Examples:
 
-- system-architecture.md
-- domain-model.md
-- application-architecture.md
-- infrastructure-architecture.md
-- ai-architecture.md
-- presentation-architecture.md
-- reporting-architecture.md
+```text
+TMP-101 Business Architecture.md
+TMP-102 System Architecture.md
+TMP-103 Domain Architecture.md
+TMP-104 Data Flow Architecture.md
+TMP-105 AI Architecture.md
+TMP-106 Implementation Architecture.md
+```
 
 ---
 
-## Specification Documents
+## 9.4 Technical Specifications
 
-Specifications should describe the feature or business rule they define.
+### DS-031
+
+Specification documents shall clearly describe the engineering concept or business rule they define.
 
 Examples:
 
-- session-detection.md
-- activity-taxonomy.md
-- analytics-engine.md
-- recognition-engine.md
-
-Specification names should reflect the concept rather than the implementation.
+```text
+Session Detection.md
+Activity Taxonomy.md
+Analytics Engine.md
+Recognition Engine.md
+```
 
 ---
 
-# 10. Document Version Control
+# 10. Engineering Reference System
+
+The Engineering Reference System is defined by **TMP-008 — Engineering Reference System**.
+
+This document adopts the Engineering Reference System as the official referencing standard.
+
+### DS-032
+
+Engineering documents shall comply with **TMP-008**.
+
+### DS-033
+
+Normative engineering requirements shall receive permanent rule identifiers in accordance with **TMP-008 §7 (ERS-004)**.
+
+### DS-034
+
+Engineering documents shall use hierarchical section numbering in accordance with **TMP-008 §6 (ERS-002)**.
+
+### DS-035
+
+Cross references shall follow the citation format defined in **TMP-008 §9 (ERS-008 to ERS-010)**.
+
+Example:
+
+```text
+TMP-004 §9.2 (DS-029)
+
+TMP-005 §5.1 (RS-004)
+
+TMP-006 §7.3 (AR-006)
+```
+
+---
+
+# 11. Document Version Control
 
 Documentation evolves alongside software.
 
-Version numbers should indicate meaningful changes to content rather than every minor edit.
-
-## Recommended Versioning
+## 11.1 Versioning
 
 | Version | Meaning |
 |----------|---------|
-| 0.x | Working draft |
-| 1.0 | Initial adopted edition |
-| 1.x | Minor improvements or clarifications |
-| 2.0 | Major revision affecting structure or intent |
+| 0.x | Working Draft |
+| 1.0 | Initial Adopted Edition |
+| 1.x | Minor Improvements |
+| 2.0 | Major Revision |
 
-Version history should be recorded within the document whenever significant revisions occur.
+### DS-036
+
+Version numbers shall reflect meaningful engineering changes.
+
+### DS-037
+
+Major revisions shall update the revision history.
 
 ---
 
-# 11. Document Review and Approval
+# 12. Document Review and Approval
 
-Every important engineering document should undergo review before adoption.
+Engineering documentation should undergo formal review before adoption.
 
-The recommended workflow is:
+Recommended workflow:
 
 1. Draft
 2. Technical Review
@@ -461,7 +525,13 @@ The recommended workflow is:
 5. Adoption
 6. Publication
 
-Review should focus on:
+### DS-038
+
+Engineering standards shall be reviewed before adoption.
+
+### DS-039
+
+Reviews should evaluate:
 
 - Technical accuracy
 - Clarity
@@ -470,11 +540,9 @@ Review should focus on:
 - Maintainability
 - Alignment with the TechAndMe Playbook
 
-Engineering standards improve through constructive review rather than individual opinion.
-
 ---
 
-# 12. Related Documents
+# 13. Related Documents
 
 This document should be read alongside:
 
@@ -483,20 +551,25 @@ This document should be read alongside:
 - TMP-003 Engineering Principles
 - TMP-005 Repository Standards
 - TMP-006 Architecture Review Process
+- TMP-007 Checkpoint Framework
+- TMP-008 Engineering Reference System
 
-Together, these documents establish the governance framework for all TechAndMe engineering activities.
+### DS-040
+
+Related engineering standards should be referenced where applicable.
 
 ---
 
-# 13. Revision History
+# 14. Revision History
 
 | Version | Date | Description | Author |
 |----------|------|-------------|--------|
-| 1.0 | July 2026 | Initial adopted edition | TechAndMe |
+| 1.0 | July 2026 | Initial edition | TechAndMe |
+| 2.0 | July 2026 | Adopted Engineering Reference System, rule identifiers, section numbering, and cross-reference standards. | TechAndMe |
 
 ---
 
-# 14. Closing Reflection
+# 15. Closing Reflection
 
 Documentation preserves engineering knowledge.
 
@@ -506,7 +579,7 @@ Technologies evolve.
 
 Teams grow.
 
-But well-written documentation allows ideas, decisions, and lessons learned to remain accessible long after individual implementations have changed.
+Well-written documentation ensures that ideas, decisions, standards, and lessons remain accessible long after implementations have changed.
 
 Within TechAndMe, documentation is not considered a secondary activity.
 
